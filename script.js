@@ -1,14 +1,12 @@
-// Manejo de la Pantalla de Carga
+// Manejo del Loader
 window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
-    
-    // Esperamos 2 segundos para que se vea la animación y luego ocultamos
     setTimeout(() => {
         loader.classList.add("loader-hidden");
     }, 2000);
 });
 
-// Manejo del Carrusel Automático
+// Manejo del Carrusel
 const carousel = document.getElementById('carousel');
 const slides = document.querySelectorAll('.slide');
 let index = 0;
@@ -18,9 +16,8 @@ function moveCarousel() {
     if (index >= slides.length) {
         index = 0;
     }
-    // Desplaza el contenedor el porcentaje correspondiente
     carousel.style.transform = `translateX(-${index * 100}%)`;
 }
 
-// Cambia de slide cada 5 segundos
-setInterval(moveCarousel, 5000);
+// Rotación cada 4 segundos
+setInterval(moveCarousel, 4000);
